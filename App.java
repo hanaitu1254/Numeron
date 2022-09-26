@@ -37,7 +37,7 @@
             for(;;) {
             System.out.println("0から9までの整数を入力してください(重複禁止)");
                 int num1 = scan.nextInt();
-                if (num1 <= 0 || num1 >= 10) {
+                if (num1 < 0 || num1 >= 10) {
                     System.out.println("指示と異なる数値が入力されました。もう一度入力しなおしてください。");
                 } else {
                     System.out.println("1桁目:" + num1);
@@ -53,16 +53,16 @@
             for(;;) {
             System.out.println("2桁目を入力してください");
                 int num2 = scan.nextInt();
-                if (num2 <= 0 || num2 >= 10) {
+                if (num2 < 0 || num2 >= 10) {
                     System.out.println("指示と異なる数値が入力されました。もう一度入力しなおしてください。");
                 } else if(num2 == x){
                     System.out.println("重複しています。もう一度入力しなおしてください。");
                 } else {
                     System.out.println("2桁目:" + num2);
                     y = num2;
-                    if(num2 == Q1){
+                    if(num2 == Q2){
                         eat++;
-                    } else if(num2 == Q2 || num2 == Q3){
+                    } else if(num2 == Q1 || num2 == Q3){
                         bite++;
                     }
                     break;
@@ -71,16 +71,16 @@
             for(;;) {
             System.out.println("3桁目を入力してください");
                 int num3 = scan.nextInt();
-                if (num3 <= 0 || num3 >= 10) {
+                if (num3 < 0 || num3 >= 10) {
                     System.out.println("指示と異なる数値が入力されました。もう一度入力しなおしてください。");
                 } else if(num3 == x || num3 == y){
                     System.out.println("重複しています。もう一度入力しなおしてください。");
                 } else {
                     System.out.println("2桁目:" + num3);
                     z = num3;
-                    if(num3 == Q1){
+                    if(num3 == Q3){
                         eat++;
-                    } else if(num3 == Q2 || num3 == Q3){
+                    } else if(num3 == Q1 || num3 == Q2){
                         bite++;
                     }
                     break;
@@ -97,6 +97,8 @@
                 break;
             } else {
                 System.out.println(eat + "イート、" + bite + "バイトです");
+                eat = 0;
+                bite = 0;
             }
         }
         System.out.println("正解は「"+Answer+"」でした");
