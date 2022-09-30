@@ -1,8 +1,10 @@
+import java.util.*;
+public class App {
     public static void main(String[] args) throws Exception {
-        int Q1 = new java.util.Random().nextInt(10);
+        int Q1 = new Random().nextInt(10);
         int Q2 = 0;
         for(;;){
-            int x = new java.util.Random().nextInt(10);
+            int x = new Random().nextInt(10);
             if(x == Q1){
                 continue;
             } else {
@@ -12,7 +14,7 @@
         }
         int Q3 = 0;
         for(;;){
-            int y = new java.util.Random().nextInt(10);
+            int y = new Random().nextInt(10);
             if(y == Q1||y == Q2){
                 continue;
             } else {
@@ -24,7 +26,7 @@
         String SQ2 = String.valueOf(Q2);
         String SQ3 = String.valueOf(Q3);
         String Answer = SQ1+SQ2+SQ3;
-        java.util.Scanner scan = new java.util.Scanner(System.in);        
+        Scanner scan = new Scanner(System.in);        
         System.out.println("[ヌメロン]");
         for (int i = 0; i < 10; i++) {
             int eat = 0;
@@ -92,7 +94,7 @@
             String Alist = A1+A2+A3;
             System.out.println("あなたの回答は->" + Alist);
             // 正誤判定 3eatならクリア
-            if(eat==3 & bite == 0){
+            if(eat==3){
                 System.out.println("ゲームクリア！");
                 break;
             } else {
